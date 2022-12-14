@@ -2,6 +2,7 @@ from sense_hat import SenseHat
 
 sense = SenseHat()
 
+sense.set_rotation(180)
 
 # Sets teh color variables
 white = (255, 255, 255)
