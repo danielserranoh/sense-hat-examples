@@ -17,6 +17,8 @@ print(pressure, 'mb')
 
 temperature = round(sense.get_temperature(), 1)
 print(temperature, 'ºC')
+temp2 = round(sense.get_temperature_from_pressure(), 1)
+print(temp2, 'ºC')
 
 humidity = round(sense.get_humidity(), 0)
 print(humidity, "%")
