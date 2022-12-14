@@ -15,10 +15,13 @@ black = (0, 0, 0)
 pressure = round(sense.get_pressure(), 1)
 print(pressure, 'mb')
 
-temperature = round(sense.get_temperature(), 1)
-print(temperature, 'ºC')
+# same as get_temperature_from_humidity
+temp1 = round(sense.get_temperature(), 1)
 temp2 = round(sense.get_temperature_from_pressure(), 1)
-print(temp2, 'ºC')
+
+
+temperature = (temp1 + temp2)/2
+print(temperature, 'ºC')
 
 humidity = round(sense.get_humidity(), 0)
 print(humidity, "%")
