@@ -17,6 +17,8 @@ warning_screen = [
     r, r, r, r, r, r, r, r
 ]
 
+#Setup Warning Limit
+warning_g = 0.5
 
 while True:
     acceleration = sense.get_accelerometer_raw()
@@ -31,7 +33,7 @@ while True:
     # Prints to screen
     print("x={0}, y={1}, z={2}".format(x, y, z))
 
-    if abs(x) > 1.0 or abs(y) > 1.0 or abs(z) > 1.0:
+    if abs(x) > warning_g or abs(y) > warning_g or abs(z) > warning_g:
         sense.set_pixels(warning_screen)
         # Update the rotation of the display depending on which way up the Sense HAT is
         if x == -1:
