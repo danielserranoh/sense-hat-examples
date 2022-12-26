@@ -18,7 +18,7 @@ warning_screen = [
 ]
 
 #Setup Warning Limit
-warning_g = 0.5
+warning_g = 1.0
 
 while True:
     acceleration = sense.get_accelerometer_raw()
@@ -34,6 +34,7 @@ while True:
     print("x={0}, y={1}, z={2}".format(x, y, z))
 
     if abs(x) > warning_g or abs(y) > warning_g or abs(z) > warning_g:
+        # prints to SenseHat LED Matrix
         sense.set_pixels(warning_screen)
         # Update the rotation of the display depending on which way up the Sense HAT is
         if x == -1:
